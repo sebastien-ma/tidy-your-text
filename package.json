@@ -1,0 +1,51 @@
+{
+	"name": "tidy-your-text",
+	"displayName": "Tidy Your Text",
+	"description": "Set of handy utilities to tidy your text.",
+	"version": "1.0.0",
+	"engines": {
+		"vscode": "^1.63.0"
+	},
+	"categories": [
+		"Formatters",
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:tidy-your-text.format-stacktrace",
+		"onCommand:tidy-your-text.remove-color-code"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "tidy-your-text.format-stacktrace",
+				"title": "Tidy Your Text: Format Stacktrace"
+			},
+			{
+				"command": "tidy-your-text.remove-color-code",
+				"title": "Tidy Your Text: Remove Color Code"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.63.0",
+		"@types/glob": "^7.1.4",
+		"@types/mocha": "^9.0.0",
+		"@types/node": "14.x",
+		"@typescript-eslint/eslint-plugin": "^5.1.0",
+		"@typescript-eslint/parser": "^5.1.0",
+		"eslint": "^8.1.0",
+		"glob": "^7.1.7",
+		"mocha": "^9.1.3",
+		"typescript": "^4.4.4",
+		"@vscode/test-electron": "^1.6.2"
+	}
+}
